@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>古美術 一徳 — IKKOKU｜江戸期の和骨董 ・ 染付 ・ 軸物</title>
+  <meta name="description" content="江戸から明治の和骨董を扱う。古伊万里、染付、書画、刀装具。鑑識と来歴を厳しく見極めた逸品のみを置く小さな古美術店。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --shikkoku:#0c0a08;
+      --kuro:#1a1612;
+      --gunjo:#1f2e4a;
+      --gunjo-asa:#3a4a6a;
+      --shibukin:#b88a3a;
+      --shibukin-koi:#8a6325;
+      --hakuji:#f4f0e6;
+      --hakuji-uss:#d8d0c0;
+      --shuin:#a8302a;
+      --kobi:#6a4a30;
+      --hai:#7a7268;
+      --font-yu:'Yuji Syuku','Shippori Mincho B1',serif;
+      --font-shippori:'Shippori Mincho B1','Noto Serif JP',serif;
+      --font-honbun:'Noto Serif JP',serif;
+    }
+    html{scroll-behavior:smooth;background:var(--shikkoku)}
+    body{
+      background:var(--shikkoku);
+      color:var(--hakuji);
+      font-family:var(--font-honbun);
+      font-weight:300;
+      line-height:1.95;
+      letter-spacing:.06em;
+      overflow-x:hidden;
+      min-height:100vh;
+      background-image:
+        radial-gradient(ellipse at top right,rgba(31,46,74,.25),transparent 50%),
+        radial-gradient(ellipse at bottom left,rgba(106,74,48,.12),transparent 55%);
+    }
+    /* 漆 ・ 微細な質感 */
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360'><filter id='n'><feTurbulence baseFrequency='.95' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.9  0 0 0 0 0.8  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      mix-blend-mode:overlay;
+      opacity:.5;
+      z-index:1;
+    }
+    main,header,footer,section{position:relative;z-index:2}
+    a{color:inherit;text-decoration:none}
+
+    /* ─── 上部 ─── */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.6rem clamp(1.2rem,4vw,3.5rem);
+      gap:1rem;
+      border-bottom:1px solid rgba(184,138,58,.22);
+      position:sticky;top:0;z-index:50;
+      background:rgba(12,10,8,.92);
+      backdrop-filter:blur(8px);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.9rem;
+    }
+    .brand .seal{
+      display:inline-block;
+      width:2.2rem;height:2.2rem;
+      background:var(--shuin);
+      color:var(--hakuji);
+      font-family:var(--font-yu);
+      font-size:.9rem;
+      font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+      letter-spacing:0;
+      box-shadow:inset 0 0 0 1.5px var(--hakuji);
+    }
+    .brand-name{
+      font-family:var(--font-yu);
+      font-size:clamp(1.15rem,2vw,1.45rem);
+      letter-spacing:.4em;
+      color:var(--hakuji);
+      line-height:1;
+    }
+    .brand-name small{
+      display:block;
+      font-family:var(--font-shippori);
+      font-size:.5em;
+      letter-spacing:.5em;
+      color:var(--shibukin);
+      font-weight:500;
+      margin-top:.7em;
+    }
+    nav ul{list-style:none;display:flex;gap:clamp(1rem,2.2vw,2.2rem);font-family:var(--font-shippori);font-size:.82rem;letter-spacing:.35em;color:var(--hakuji-uss)}
+    nav a{position:relative}
+    nav a::before{
+      content:"";position:absolute;left:50%;bottom:-.4em;
+      width:0;height:1px;background:var(--shibukin);transition:width .5s;
+    }
+    nav a:hover{color:var(--shibukin)}
+    nav a:hover::before{width:100%;left:0}
+
+    /* ─── 床の間ヒーロー ─── */
+    .tokonoma{
+      padding:clamp(4rem,9vw,8rem) clamp(1.2rem,4vw,3.5rem) clamp(3rem,6vw,5rem);
+      position:relative;
+      min-height:80svh;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(2rem,5vw,4rem);
+      align-items:center;
+    }
+    @media(min-width:880px){
+      .tokonoma{grid-template-columns:.45fr 1fr;gap:clamp(2rem,5vw,5rem)}
+    }
+    /* 軸 — 縦書きタイトル */
+    .jiku{
+      position:relative;
+      padding:2rem 1.5rem;
+      background:linear-gradient(to bottom,rgba(244,240,230,.04),rgba(244,240,230,.07));
+      border-top:8px solid var(--shibukin-koi);
+      border-bottom:8px solid var(--shibukin-koi);
+      max-height:clamp(380px,55vw,560px);
+      display:flex;
+      justify-content:center;
+    }
+    .jiku::before,.jiku::after{
+      content:"";
+      position:absolute;left:50%;
+      width:30px;height:14px;
+      background:var(--shibukin);
+      transform:translateX(-50%);
+    }
+    .jiku::before{top:-22px;border-radius:0 0 4px 4px}
+    .jiku::after{bottom:-22px;border-radius:4px 4px 0 0}
+    .jiku-text{
+      writing-mode:vertical-rl;
+      font-family:var(--font-yu);
+      font-size:clamp(1.5rem,2.6vw,2rem);
+      letter-spacing:.6em;
+      color:var(--hakuji);
+      line-height:2.2;
+      padding:1rem;
+    }
+    .jiku-text .seal-red{
+      display:inline-block;
+      color:var(--shuin);
+      font-size:.9em;
+      margin-top:.6em;
+    }
+    .jiku-text .stamp{
+      display:inline-block;
+      writing-mode:horizontal-tb;
+      width:1.5em;height:1.5em;
+      background:var(--shuin);
+      color:var(--hakuji);
+      font-family:var(--font-yu);
+      font-size:.5em;
+      line-height:1.5em;
+      text-align:center;
+      letter-spacing:0;
+      margin-top:.8em;
+      transform:rotate(-3deg);
+    }
+
+    .toko-body h1{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:clamp(2.2rem,5.5vw,4.4rem);
+      line-height:1.35;
+      letter-spacing:.1em;
+      color:var(--hakuji);
+      margin-bottom:1.5rem;
+    }
+    .toko-body h1 .gold{
+      background:linear-gradient(120deg,var(--shibukin-koi),var(--shibukin) 50%,var(--shibukin-koi));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .toko-body h1 small{
+      display:block;
+      font-family:var(--font-shippori);
+      font-size:.25em;
+      letter-spacing:.55em;
+      color:var(--shibukin);
+      font-weight:500;
+      margin-top:1.5em;
+    }
+    .toko-body p{
+      font-family:var(--font-shippori);
+      font-size:clamp(.95rem,1.3vw,1.05rem);
+      line-height:2.1;
+      color:var(--hakuji-uss);
+      max-width:42em;
+      font-weight:400;
+    }
+    .toko-body .meta{
+      display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;
+      margin-top:2.5rem;
+      padding-top:1.5rem;
+      border-top:1px solid rgba(184,138,58,.2);
+      font-family:var(--font-shippori);
+      font-size:.78rem;
+      letter-spacing:.35em;
+      color:var(--hai);
+    }
+    .toko-body .meta b{color:var(--shibukin);font-weight:500;letter-spacing:.2em;margin-left:.8em}
+
+    /* ─── 章 ─── */
+    .shou{
+      padding:clamp(4rem,7vw,6rem) clamp(1.2rem,4vw,3.5rem) clamp(2rem,3vw,3rem);
+      display:flex;
+      align-items:flex-end;
+      gap:clamp(1rem,3vw,2.5rem);
+      flex-wrap:wrap;
+      border-top:1px solid rgba(184,138,58,.18);
+    }
+    .shou .no{
+      font-family:var(--font-yu);
+      font-size:clamp(2.5rem,4.5vw,3.6rem);
+      color:var(--shibukin);
+      line-height:.9;
+      writing-mode:horizontal-tb;
+      letter-spacing:.05em;
+      position:relative;
+      padding-right:1.5rem;
+    }
+    .shou .no::after{
+      content:"";
+      position:absolute;bottom:.3em;right:0;
+      width:1px;height:1.5em;background:var(--shibukin);
+      opacity:.5;
+    }
+    .shou h2{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:clamp(1.7rem,3vw,2.4rem);
+      letter-spacing:.18em;
+      line-height:1.3;
+      color:var(--hakuji);
+    }
+    .shou h2 small{
+      display:block;
+      font-family:var(--font-shippori);
+      font-size:.42em;
+      letter-spacing:.45em;
+      color:var(--shibukin);
+      font-weight:500;
+      margin-top:.8em;
+    }
+    .shou .right{
+      margin-left:auto;
+      font-family:var(--font-shippori);
+      font-size:.78rem;
+      letter-spacing:.4em;
+      color:var(--hai);
+      text-align:right;
+      align-self:flex-end;
+      padding-bottom:.5em;
+    }
+
+    /* ─── 逸品列伝（商品） ─── */
+    .ippin{
+      padding:0 clamp(1.2rem,4vw,3.5rem) clamp(4rem,6vw,5rem);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(3rem,5vw,4rem);
+    }
+    @media(min-width:780px){.ippin{grid-template-columns:repeat(2,1fr)}}
+    .hin{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1.5rem;
+      padding-bottom:2.5rem;
+      border-bottom:1px solid rgba(184,138,58,.18);
+    }
+    @media(min-width:600px){.hin{grid-template-columns:auto 1fr;gap:2rem}}
+    .hin-frame{
+      width:clamp(180px,30vw,240px);
+      aspect-ratio:3/4;
+      background:linear-gradient(180deg,#0f0d0a,#1a1612);
+      border:1px solid var(--shibukin-koi);
+      display:flex;
+      align-items:center;justify-content:center;
+      position:relative;
+      box-shadow:
+        inset 0 0 0 4px rgba(12,10,8,.9),
+        inset 0 0 0 5px rgba(184,138,58,.5),
+        0 8px 24px rgba(0,0,0,.5);
+    }
+    .hin-frame::before{
+      content:"";
+      position:absolute;inset:8px;
+      border:1px solid rgba(184,138,58,.25);
+      pointer-events:none;
+    }
+    .hin svg.hin-img{width:75%;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.6))}
+    .hin-cap{
+      display:flex;flex-direction:column;
+      justify-content:space-between;
+    }
+    .hin-kigou{
+      font-family:var(--font-yu);
+      font-size:.85rem;
+      letter-spacing:.4em;
+      color:var(--shuin);
+      margin-bottom:.6rem;
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+    }
+    .hin-kigou::before{
+      content:"";width:1.6em;height:1px;background:var(--shuin);
+    }
+    .hin h3{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:clamp(1.2rem,2vw,1.55rem);
+      line-height:1.5;
+      letter-spacing:.1em;
+      margin-bottom:.5rem;
+      color:var(--hakuji);
+    }
+    .hin h3 small{
+      display:block;
+      font-family:var(--font-shippori);
+      font-size:.55em;
+      letter-spacing:.4em;
+      color:var(--shibukin);
+      font-weight:400;
+      margin-top:.5em;
+    }
+    .hin-jidai{
+      display:inline-block;
+      font-family:var(--font-yu);
+      font-size:.78rem;
+      letter-spacing:.35em;
+      padding:.3em .9em;
+      border:1px solid var(--shibukin);
+      color:var(--shibukin);
+      margin-bottom:1.2rem;
+    }
+    .hin p{
+      font-family:var(--font-shippori);
+      font-size:.88rem;
+      line-height:1.95;
+      color:var(--hakuji-uss);
+      font-weight:400;
+      max-width:32em;
+    }
+    .hin-meta{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:.4rem 1.2rem;
+      margin-top:1.2rem;
+      padding-top:1rem;
+      border-top:1px dashed rgba(184,138,58,.25);
+      font-family:var(--font-shippori);
+      font-size:.78rem;
+      letter-spacing:.15em;
+    }
+    .hin-meta dt{color:var(--hai);letter-spacing:.3em;font-size:.72rem}
+    .hin-meta dd{color:var(--hakuji)}
+    .hin .nedan{
+      font-family:var(--font-yu);
+      font-size:1.3rem;
+      letter-spacing:.05em;
+      color:var(--shibukin);
+      margin-top:1.5rem;
+      padding:.4em 0;
+      border-top:1px solid var(--shibukin);
+      border-bottom:1px solid var(--shibukin);
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+    }
+    .hin .nedan small{
+      font-family:var(--font-shippori);
+      font-size:.55em;
+      letter-spacing:.3em;
+      color:var(--hai);
+    }
+
+    /* ─── 鑑識の言 ─── */
+    .kanshiki{
+      padding:clamp(4rem,7vw,6rem) clamp(1.2rem,4vw,3.5rem);
+      background:linear-gradient(180deg,transparent,rgba(31,46,74,.15));
+      position:relative;
+    }
+    .kanshiki-wrap{
+      max-width:920px;margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(2rem,4vw,3rem);
+      align-items:start;
+    }
+    @media(min-width:780px){.kanshiki-wrap{grid-template-columns:.4fr .6fr}}
+    .kan-tate{
+      writing-mode:vertical-rl;
+      font-family:var(--font-yu);
+      font-size:clamp(1.4rem,2.2vw,1.85rem);
+      line-height:2.3;
+      letter-spacing:.45em;
+      color:var(--shibukin);
+      margin:0 auto;
+      max-height:clamp(340px,42vw,500px);
+    }
+    .kan-tate .em{color:var(--hakuji)}
+    .kan-body p{
+      font-family:var(--font-shippori);
+      font-size:1rem;
+      line-height:2.1;
+      color:var(--hakuji-uss);
+      margin-bottom:1.2rem;
+      font-weight:400;
+    }
+    .kan-body p .em{color:var(--shibukin)}
+    .kan-body p:first-letter{
+      font-family:var(--font-yu);
+      font-size:2.2em;
+      float:left;
+      line-height:1;
+      padding:.05em .15em 0 0;
+      color:var(--shibukin);
+    }
+    .kan-body .sign{
+      text-align:right;
+      font-family:var(--font-yu);
+      font-size:.95rem;
+      letter-spacing:.4em;
+      color:var(--shibukin);
+      margin-top:2rem;
+      padding-top:1.5rem;
+      border-top:1px solid rgba(184,138,58,.25);
+    }
+    .kan-body .sign::after{
+      content:"印";
+      display:inline-block;
+      width:1.6em;height:1.6em;
+      line-height:1.6em;
+      text-align:center;
+      background:var(--shuin);
+      color:var(--hakuji);
+      font-size:.7em;
+      margin-left:1em;
+      letter-spacing:0;
+      transform:translateY(-.2em);
+      box-shadow:inset 0 0 0 1px var(--hakuji);
+    }
+
+    /* ─── 来歴 ─── */
+    .raireki{
+      padding:clamp(4rem,6vw,5rem) clamp(1.2rem,4vw,3.5rem) clamp(2rem,4vw,3rem);
+    }
+    .nenpyou{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0;
+      position:relative;
+      max-width:920px;
+      margin:0 auto;
+    }
+    .nenpyou::before{
+      content:"";
+      position:absolute;
+      left:clamp(5rem,8vw,8rem);top:0;bottom:0;
+      width:1px;
+      background:linear-gradient(180deg,transparent,var(--shibukin) 12%,var(--shibukin) 88%,transparent);
+    }
+    .nen{
+      position:relative;
+      padding:1.5rem 0 1.5rem clamp(7rem,11vw,11rem);
+      border-bottom:1px solid rgba(184,138,58,.12);
+    }
+    .nen:last-child{border-bottom:none}
+    .nen .toshi{
+      position:absolute;
+      left:0;top:1.5rem;
+      width:clamp(5rem,8vw,8rem);
+      font-family:var(--font-yu);
+      font-size:clamp(.9rem,1.3vw,1.05rem);
+      letter-spacing:.25em;
+      color:var(--shibukin);
+      text-align:right;
+      padding-right:1.5rem;
+      writing-mode:horizontal-tb;
+    }
+    .nen::before{
+      content:"";
+      position:absolute;
+      left:clamp(4.7rem,7.7vw,7.7rem);top:1.95rem;
+      width:.6rem;height:.6rem;
+      background:var(--shibukin);
+      transform:rotate(45deg);
+    }
+    .nen h4{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:1.05rem;
+      letter-spacing:.15em;
+      margin-bottom:.4rem;
+      color:var(--hakuji);
+    }
+    .nen p{
+      font-family:var(--font-shippori);
+      font-size:.88rem;
+      line-height:1.95;
+      color:var(--hakuji-uss);
+      font-weight:400;
+    }
+
+    /* ─── 主人 ─── */
+    .shujin{
+      padding:clamp(4rem,7vw,6rem) clamp(1.2rem,4vw,3.5rem);
+      background:linear-gradient(180deg,rgba(12,10,8,1),rgba(31,46,74,.4),rgba(12,10,8,1));
+      border-top:1px solid rgba(184,138,58,.2);
+      border-bottom:1px solid rgba(184,138,58,.2);
+    }
+    .shujin-wrap{
+      max-width:920px;margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(2rem,4vw,3rem);
+      align-items:center;
+    }
+    @media(min-width:780px){.shujin-wrap{grid-template-columns:auto 1fr}}
+    .shujin-port{
+      width:clamp(160px,22vw,220px);
+      aspect-ratio:3/4;
+      background:linear-gradient(180deg,var(--gunjo),var(--kuro));
+      border:1px solid var(--shibukin);
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      box-shadow:0 12px 30px rgba(0,0,0,.5);
+    }
+    .shujin-port::after{
+      content:"主";
+      position:absolute;bottom:1rem;right:1rem;
+      width:2.4rem;height:2.4rem;
+      background:var(--shuin);
+      color:var(--hakuji);
+      font-family:var(--font-yu);
+      font-size:1.05rem;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:inset 0 0 0 1.5px var(--hakuji);
+    }
+    .shujin-port svg{width:60%;height:auto;opacity:.85}
+    .shujin h3{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:clamp(1.6rem,2.5vw,2.1rem);
+      letter-spacing:.2em;
+      margin-bottom:.4rem;
+      color:var(--hakuji);
+    }
+    .shujin h3 small{
+      display:block;
+      font-family:var(--font-shippori);
+      font-size:.45em;
+      letter-spacing:.4em;
+      color:var(--shibukin);
+      font-weight:400;
+      margin-top:.6em;
+    }
+    .shujin .kunkou{
+      display:flex;flex-wrap:wrap;gap:.8rem;
+      margin:1.5rem 0;
+    }
+    .shujin .kunkou span{
+      font-family:var(--font-shippori);
+      font-size:.78rem;
+      letter-spacing:.2em;
+      padding:.3em .9em;
+      border:1px solid var(--shibukin-koi);
+      color:var(--shibukin);
+    }
+    .shujin p{
+      font-family:var(--font-shippori);
+      font-size:.95rem;
+      line-height:2.05;
+      color:var(--hakuji-uss);
+      font-weight:400;
+    }
+
+    /* ─── 来店 ─── */
+    .annai{
+      padding:clamp(4rem,7vw,6rem) clamp(1.2rem,4vw,3.5rem);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:clamp(2rem,4vw,3.5rem);
+      max-width:1200px;
+      margin:0 auto;
+    }
+    @media(min-width:780px){.annai{grid-template-columns:1fr 1fr}}
+    .annai h3{
+      font-family:var(--font-yu);
+      font-weight:400;
+      font-size:clamp(1.5rem,2.5vw,2rem);
+      letter-spacing:.2em;
+      margin-bottom:2rem;
+      color:var(--hakuji);
+      padding-bottom:1rem;
+      border-bottom:1px solid var(--shibukin);
+    }
+    .annai dl{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:1rem 2rem;
+      font-family:var(--font-shippori);
+      font-size:.95rem;
+      line-height:1.9;
+    }
+    .annai dt{
+      font-family:var(--font-yu);
+      color:var(--shibukin);
+      letter-spacing:.4em;
+      white-space:nowrap;
+      font-size:.85rem;
+      padding-right:1.5rem;
+      border-right:1px solid rgba(184,138,58,.3);
+      align-self:center;
+    }
+    .annai dd{color:var(--hakuji-uss);font-weight:400}
+    .yotei p{
+      font-family:var(--font-shippori);
+      font-size:.95rem;
+      line-height:2.05;
+      color:var(--hakuji-uss);
+      margin-bottom:1.2rem;
+      font-weight:400;
+    }
+    .yotei .pred{
+      display:inline-block;
+      font-family:var(--font-yu);
+      font-size:.9rem;
+      letter-spacing:.3em;
+      padding:.6em 1.4em;
+      background:transparent;
+      color:var(--shibukin);
+      border:1px solid var(--shibukin);
+      margin-top:1rem;
+      transition:background .4s,color .4s;
+    }
+    .yotei .pred:hover{background:var(--shibukin);color:var(--shikkoku)}
+
+    /* フッター */
+    footer{
+      padding:clamp(2.5rem,4vw,3.5rem) clamp(1.2rem,4vw,3.5rem) 1.5rem;
+      border-top:1px solid rgba(184,138,58,.25);
+      background:var(--kuro);
+    }
+    footer .end{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2rem;
+      padding-bottom:2rem;
+      border-bottom:1px solid rgba(184,138,58,.15);
+      margin-bottom:1.5rem;
+    }
+    @media(min-width:780px){footer .end{grid-template-columns:1fr auto}}
+    footer .links{
+      display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;
+      font-family:var(--font-shippori);font-size:.78rem;letter-spacing:.4em;color:var(--hai);
+    }
+    footer .copyr{
+      font-family:var(--font-shippori);
+      font-size:.7rem;
+      letter-spacing:.4em;
+      color:var(--hai);
+      opacity:.7;
+    }
+
+    /* アニメーション */
+    @keyframes shizuka{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .reveal{animation:shizuka 1.4s cubic-bezier(.2,.7,.2,1) both}
+    .d1{animation-delay:.2s}.d2{animation-delay:.4s}.d3{animation-delay:.6s}.d4{animation-delay:.8s}
+
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0!important;transition:none!important}}
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="../">
+    <span class="seal">徳</span>
+    <span class="brand-name">古美術 一徳<small>IKKOKU ── KOBIJUTSU</small></span>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="#ippin">逸品列伝</a></li>
+      <li><a href="#kanshiki">鑑識の言</a></li>
+      <li><a href="#shujin">主人</a></li>
+      <li><a href="#annai">来店</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="tokonoma">
+    <div class="jiku reveal">
+      <div class="jiku-text">
+        <span>古</span><span>　</span>
+        <span>き</span><span>を</span>
+        <span>知</span><span>り</span>
+        <span>　</span>
+        <span>新</span><span>た</span>
+        <span>に</span>
+        <span>　</span>
+        <span>逸</span><span>品</span>
+        <span>を</span>
+        <span>　</span>
+        <span>蒐</span><span>む</span>
+        <span class="stamp">徳</span>
+      </div>
+    </div>
+    <div class="toko-body">
+      <h1 class="reveal d1">
+        <span class="gold">江戸</span>より<br>
+        <span class="gold">平成</span>へ、<br>
+        手渡された逸品。
+        <small>FROM EDO TO HEISEI ── KOBIJUTSU IKKOKU</small>
+      </h1>
+      <p class="reveal d2">
+        江戸後期から明治、大正にかけての和骨董を専門に扱う、京都の小さな古美術商です。古伊万里の染付、唐津、刀剣装具、書画、漆器、煎茶具——いずれも来歴を確かに辿ることのできる品のみを店頭に並べております。鑑識を厳しく行い、贋作・修復過多のものは決して扱いません。御来店の前にお問い合わせをいただければ幸甚に存じます。
+      </p>
+      <div class="meta reveal d3">
+        <span>創業<b>昭和五十二年</b></span>
+        <span>取扱<b>江戸 ・ 明治 ・ 大正</b></span>
+        <span>所在<b>京都 ・ 上京</b></span>
+        <span>所属<b>京都美術倶楽部</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="ippin">
+    <div class="shou">
+      <div class="no">一</div>
+      <h2>
+        逸品列伝<small>IPPIN RETSU-DEN ── SELECT WORKS</small>
+      </h2>
+      <span class="right">令和六年 ・ 葉月 入荷</span>
+    </div>
+
+    <div class="ippin">
+      <article class="hin reveal">
+        <div class="hin-frame">
+          <svg class="hin-img" viewBox="0 0 200 280" aria-hidden="true">
+            <defs>
+              <linearGradient id="ko1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#f4f0e6"/>
+                <stop offset="1" stop-color="#c8c0b0"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="250" rx="70" ry="10" fill="rgba(0,0,0,.5)"/>
+            <path d="M50 130 Q50 70 100 65 Q150 70 150 130 L145 240 Q100 252 55 240 Z" fill="url(#ko1)" stroke="#3a3a3a" stroke-width="1"/>
+            <ellipse cx="100" cy="68" rx="48" ry="8" fill="#a8a298"/>
+            <ellipse cx="100" cy="68" rx="48" ry="8" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+            <!-- 染付の絵 -->
+            <g fill="#1f2e4a" opacity=".85">
+              <path d="M70 120 Q85 110 100 120 Q115 110 130 120 Q125 140 100 145 Q75 140 70 120 Z"/>
+              <path d="M75 175 Q90 168 100 175 Q110 168 125 175 Q120 195 100 200 Q80 195 75 175 Z"/>
+              <circle cx="85" cy="135" r="2"/>
+              <circle cx="115" cy="135" r="2"/>
+              <path d="M88 155 L95 165 L105 165 L112 155" stroke="#1f2e4a" stroke-width="1.2" fill="none"/>
+            </g>
+            <!-- 高台 -->
+            <ellipse cx="100" cy="245" rx="35" ry="5" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="hin-cap">
+          <div class="hin-kigou">第 壹 號</div>
+          <h3>古伊万里 染付 山水文 大鉢<small>KO-IMARI · SANSUI · OBACHI</small></h3>
+          <span class="hin-jidai">江戸中期 ・ 元禄頃</span>
+          <p>有田 ・ 元禄〜享保にかけての一品。中央に山水を描き、周縁に蔓草文を巡らす。呉須の発色が抜群に良く、見込みの絵付けも省略のない丁寧な筆致。底面に「大明成化年製」の銘あり。</p>
+          <dl class="hin-meta">
+            <dt>寸法</dt><dd>径 三五.五糎 ・ 高 八.二糎</dd>
+            <dt>状態</dt><dd>無傷 / ホツ・ニュウなし</dd>
+            <dt>箱</dt><dd>合せ箱 ・ 桐</dd>
+          </dl>
+          <div class="nedan">
+            ¥ 380,000<small>税込 ・ 鑑定書付</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="hin reveal d1">
+        <div class="hin-frame">
+          <svg class="hin-img" viewBox="0 0 200 280" aria-hidden="true">
+            <ellipse cx="100" cy="250" rx="70" ry="9" fill="rgba(0,0,0,.5)"/>
+            <path d="M55 160 Q55 95 100 88 Q145 95 145 160 L142 235 Q100 248 58 235 Z" fill="#6a4a30" stroke="#1a1010" stroke-width="1"/>
+            <path d="M55 160 L142 160" stroke="#1a1010" stroke-width="1"/>
+            <ellipse cx="100" cy="92" rx="42" ry="6" fill="#3a2515"/>
+            <!-- 文様 -->
+            <g fill="#b88a3a" opacity=".75">
+              <path d="M75 110 Q100 105 120 110 Q115 130 100 132 Q85 130 75 110 Z"/>
+              <path d="M70 175 Q85 170 95 175 Q90 195 75 198 Q65 195 70 175 Z"/>
+              <path d="M105 175 Q120 170 130 175 Q125 195 110 198 Q100 195 105 175 Z"/>
+              <circle cx="100" cy="155" r="3"/>
+            </g>
+            <ellipse cx="100" cy="240" rx="38" ry="4" fill="none" stroke="#1a1010" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="hin-cap">
+          <div class="hin-kigou">第 貳 號</div>
+          <h3>唐津 朝鮮唐津 茶碗<small>KARATSU · CHOSEN KARATSU</small></h3>
+          <span class="hin-jidai">江戸初期 ・ 慶長頃</span>
+          <p>古唐津、慶長頃の朝鮮唐津茶碗。鉄釉と藁灰釉の景色が見事で、火間も自然。胴の歪み、高台の削りに当代の趣を残す。中興名物といい得る一品。底に小さな目跡あり。煎茶 ・ 抹茶ともに使い得る。</p>
+          <dl class="hin-meta">
+            <dt>寸法</dt><dd>径 一二.八糎 ・ 高 八.〇糎</dd>
+            <dt>状態</dt><dd>本歌 ・ 良好 / 古修理なし</dd>
+            <dt>箱</dt><dd>古桐合 / 識箱別添</dd>
+          </dl>
+          <div class="nedan">
+            ¥ 820,000<small>税込 ・ 鑑定書付</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="hin reveal d2">
+        <div class="hin-frame">
+          <svg class="hin-img" viewBox="0 0 200 280" aria-hidden="true">
+            <rect x="55" y="40" width="90" height="200" fill="#f4f0e6" stroke="#1a1010" stroke-width="1.5"/>
+            <rect x="50" y="35" width="100" height="12" fill="#6a4a30"/>
+            <rect x="50" y="232" width="100" height="12" fill="#6a4a30"/>
+            <!-- 書 -->
+            <g fill="#1a1010" opacity=".85">
+              <text x="100" y="80" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="22" letter-spacing="2">山</text>
+              <text x="100" y="115" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="22" letter-spacing="2">中</text>
+              <text x="100" y="150" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="22" letter-spacing="2">問</text>
+              <text x="100" y="185" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="22" letter-spacing="2">答</text>
+            </g>
+            <!-- 印 -->
+            <rect x="86" y="200" width="14" height="14" fill="#a8302a"/>
+            <text x="93" y="211" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="8" fill="#f4f0e6">徳</text>
+          </svg>
+        </div>
+        <div class="hin-cap">
+          <div class="hin-kigou">第 參 號</div>
+          <h3>頼山陽 自詠詩 一幅<small>RAI SAN'YO · JI-EI SHI</small></h3>
+          <span class="hin-jidai">江戸後期 ・ 文政頃</span>
+          <p>頼山陽（一七八〇 ─ 一八三二）の自詠による七言絶句一幅。落款・印章ともに山陽の典型。本紙は楮紙、表装は緞子。経年並みのヤケ少々あるも、墨色冴え、文字に勢いある優品。書斎の床に最適。</p>
+          <dl class="hin-meta">
+            <dt>寸法</dt><dd>本紙 一一〇 × 三四糎</dd>
+            <dt>状態</dt><dd>表装は明治期の改装と推定</dd>
+            <dt>箱</dt><dd>桐塗箱 ・ 識者識箱付</dd>
+          </dl>
+          <div class="nedan">
+            ¥ 1,250,000<small>税込 ・ 鑑定書付</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="hin reveal d3">
+        <div class="hin-frame">
+          <svg class="hin-img" viewBox="0 0 200 280" aria-hidden="true">
+            <rect x="50" y="40" width="100" height="200" rx="6" fill="#0c0a08" stroke="#b88a3a" stroke-width="1.5"/>
+            <g fill="#b88a3a" opacity=".95">
+              <path d="M80 70 Q100 60 120 70 Q120 95 100 105 Q80 95 80 70 Z"/>
+              <path d="M75 130 L125 130 L120 145 L80 145 Z"/>
+              <circle cx="100" cy="180" r="14"/>
+              <path d="M90 180 L110 180 M100 170 L100 190" stroke="#0c0a08" stroke-width="1.5"/>
+              <path d="M75 220 Q100 215 125 220" stroke-width="1.5" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <div class="hin-cap">
+          <div class="hin-kigou">第 肆 號</div>
+          <h3>蒔絵 印籠 ・ 桐鳳凰文<small>MAKIE INRO · KIRI-HOO</small></h3>
+          <span class="hin-jidai">江戸末期 ・ 嘉永頃</span>
+          <p>四段印籠、黒漆地に高蒔絵で桐に鳳凰を描く。緒締めは珊瑚、根付は獅子。蒔絵は研出・高蒔絵を併用した上手作。蓋の合いが極めて精確で、職人の腕の高さを語る。</p>
+          <dl class="hin-meta">
+            <dt>寸法</dt><dd>高 七.五糎 ・ 幅 五.六糎</dd>
+            <dt>状態</dt><dd>四段、すべて合い良し</dd>
+            <dt>付属</dt><dd>緒締 ・ 根付一体</dd>
+          </dl>
+          <div class="nedan">
+            ¥ 480,000<small>税込 ・ 鑑定書付</small>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="kanshiki" class="kanshiki">
+    <div class="shou">
+      <div class="no">二</div>
+      <h2>
+        鑑識の言<small>KANSHIKI ── DISCERNMENT</small>
+      </h2>
+    </div>
+    <div class="kanshiki-wrap">
+      <div class="kan-tate reveal">
+        <span>　骨</span><span>　董</span><span>　に</span>
+        <span class="em">　真</span><span class="em">　贋</span>
+        <span>　は</span><span>　あ</span><span>　れ</span>
+        <span>　ど</span>
+        <span>　値</span>
+        <span>　に</span>
+        <span class="em">　優</span><span class="em">　劣</span>
+        <span>　は</span>
+        <span>　な</span><span>　し</span>
+      </div>
+      <div class="kan-body reveal d1">
+        <p>古美術を商って四十有余年。<span class="em">真贋を見極める</span>とは、伝来を辿り、釉薬を識り、土を撫で、絵筆の運びを覚えるという、絶え間ない地味な作業の積み重ねに過ぎぬというのが、私の到達した素朴な結論であります。</p>
+        <p>近年、海外の古美術市場では、日本の骨董が驚くべき高値で取引されておりますが、私どもはこの種の流行を冷ややかに見ております。<span class="em">本物は本物</span>、贋作は贋作。値の上下に左右されることなく、品そのものの語る歴史と美しさを、お客様にお伝えするのが商人の本分と心得ております。</p>
+        <p>当店は、徒に値を吊り上げることをせず、また真贋に少しでも疑義がある品は、いかに利が見込めようとも扱いません。買い取りに当たっても同様、誠意をもって応じてまいります。何卒、御理解いただきたく存じます。</p>
+        <p class="sign">店主 ・ 佐藤 雅彦</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="raireki" class="raireki">
+    <div class="shou">
+      <div class="no">三</div>
+      <h2>
+        当店の来歴<small>RAIREKI ── THE SHOP'S HISTORY</small>
+      </h2>
+    </div>
+    <div class="nenpyou">
+      <div class="nen reveal">
+        <div class="toshi">昭和五二</div>
+        <h4>京都 ・ 寺町に開業</h4>
+        <p>初代 佐藤 一徳が、京都市中京区寺町三条に「古美術 一徳」を開く。明治より続く骨董商の家系。当初は煎茶具と書画を中心に商う。</p>
+      </div>
+      <div class="nen reveal">
+        <div class="toshi">昭和六一</div>
+        <h4>京都美術倶楽部 加入</h4>
+        <p>京都美術倶楽部の交換会員として認められる。これを機に古伊万里・唐津など、やきものを取扱品目に加えた。</p>
+      </div>
+      <div class="nen reveal">
+        <div class="toshi">平成 二</div>
+        <h4>東京 ・ 京橋に支店</h4>
+        <p>初代の長男 ・ 一郎が東京京橋 一丁目に支店を開く。同年、東京美術倶楽部の交換会員に加わる。</p>
+      </div>
+      <div class="nen reveal">
+        <div class="toshi">平成一七</div>
+        <h4>初代 ・ 一徳 逝去</h4>
+        <p>初代 ・ 佐藤 一徳が八三歳で逝去。長男 ・ 一郎が二代目を継ぐ。同時に京橋店を閉じ、本店の上京区に集約。</p>
+      </div>
+      <div class="nen reveal">
+        <div class="toshi">令和 二</div>
+        <h4>三代目 ・ 雅彦 襲名</h4>
+        <p>二代 ・ 一郎の長男 ・ 雅彦が三代目を継ぐ。当代は美術史学を専修し、特に近世のやきものと文人の書画を得意とする。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shujin" class="shujin">
+    <div class="shou">
+      <div class="no">四</div>
+      <h2>
+        当代主人<small>TOUDAI SHUJIN ── THE CURRENT PROPRIETOR</small>
+      </h2>
+    </div>
+    <div class="shujin-wrap">
+      <div class="shujin-port reveal">
+        <svg viewBox="0 0 100 140" aria-hidden="true">
+          <circle cx="50" cy="40" r="22" fill="#b88a3a" opacity=".4"/>
+          <path d="M28 80 Q28 65 50 60 Q72 65 72 80 L72 135 L28 135 Z" fill="#b88a3a" opacity=".3"/>
+          <text x="50" y="46" text-anchor="middle" font-family="Yuji Syuku, serif" font-size="14" fill="#f4f0e6" letter-spacing="1">主人</text>
+        </svg>
+      </div>
+      <div class="reveal d1">
+        <h3>佐藤 雅彦<small>SATO MASAHIKO ── 三代目</small></h3>
+        <div class="kunkou">
+          <span>京都美術倶楽部 ・ 正会員</span>
+          <span>近世やきもの研究</span>
+          <span>古文人画 鑑定</span>
+          <span>非常勤講師 ・ 美術史</span>
+        </div>
+        <p>昭和四十一年 京都生まれ。学習院大学 文学部 哲学科 美学美術史専攻 卒業後、東京国立博物館 客員研究員を経て、当家に戻り家業を継ぐ。学界においては近世やきものに関する論文を多数発表。新潟県立美術館・大和文華館にて講演実績あり。</p>
+        <p>現在は京都の店頭に立つ傍ら、月に一度、東京の馴染みのお客様のもとへ伺っている。鑑定の依頼・買取の御相談は、お電話にて。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="annai" class="annai">
+    <div>
+      <h3>御来店</h3>
+      <dl>
+        <dt>店名</dt><dd>古美術 一徳 ・ 京都本店</dd>
+        <dt>店主</dt><dd>佐藤 雅彦（三代目）</dd>
+        <dt>所在</dt><dd>京都市上京区 寺之内通 新町西入<br>古美術 一徳ビル 一階</dd>
+        <dt>電話</dt><dd>○七五 ─ 四四一 ─ ××○○</dd>
+        <dt>営業</dt><dd>木 ・ 金 ・ 土 / 一一時 ─ 一八時<br>（御来店は要事前連絡）</dd>
+        <dt>定休</dt><dd>日 ・ 月 ・ 火 ・ 水</dd>
+        <dt>所属</dt><dd>京都美術倶楽部 ・ 古美術商組合</dd>
+        <dt>古物商</dt><dd>京都府公安委員会 第六一一〇〇 ─ ○○○○○○ 号</dd>
+      </dl>
+    </div>
+    <div class="yotei">
+      <h3>来店予約と鑑定</h3>
+      <p>当店は完全予約制でございます。御来店をご希望の方は、御来店の三日前までを目安に、お電話または手紙にて御連絡を賜りますよう、お願い申し上げます。</p>
+      <p>鑑定の御相談につきましても、写真と寸法・伝来を御明記の上、書面にてお問い合わせください。御所蔵品の御相談には、改めて店主より日時を御指定の上、御返事申し上げます。</p>
+      <p>古美術の商いは、急ぐべきものではありません。一服のお茶を差し上げながら、ゆっくりと品を御覧いただける時間を、当店は何より大切にしております。</p>
+      <a href="#" class="pred">来店予約のお問い合わせ</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="end">
+    <a class="brand" href="../">
+      <span class="seal">徳</span>
+      <span class="brand-name">古美術 一徳<small>IKKOKU</small></span>
+    </a>
+    <ul class="links" style="list-style:none">
+      <li>逸品列伝</li>
+      <li>鑑識</li>
+      <li>来歴</li>
+      <li>主人</li>
+      <li>来店</li>
+    </ul>
+  </div>
+  <div class="copyr">© 令和六年 古美術 一徳 ・ IKKOKU ─ 骨董デザイン研究のための架空店舗です</div>
+</footer>
+
+</body>
+</html>
