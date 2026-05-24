@@ -135,13 +135,15 @@
     /* 軸 — 縦書きタイトル */
     .jiku{
       position:relative;
-      padding:2rem 1.5rem;
+      padding:1.2rem 1.1rem;
       background:linear-gradient(to bottom,rgba(244,240,230,.04),rgba(244,240,230,.07));
       border-top:8px solid var(--shibukin-koi);
       border-bottom:8px solid var(--shibukin-koi);
-      max-height:clamp(380px,55vw,560px);
-      display:flex;
+      display:inline-flex;
       justify-content:center;
+      align-self:center;
+      justify-self:center;
+      margin-inline:auto;
     }
     .jiku::before,.jiku::after{
       content:"";
@@ -156,10 +158,10 @@
       writing-mode:vertical-rl;
       font-family:var(--font-yu);
       font-size:clamp(1.5rem,2.6vw,2rem);
-      letter-spacing:.6em;
+      letter-spacing:.5em;
       color:var(--hakuji);
-      line-height:2.2;
-      padding:1rem;
+      line-height:1.9;
+      padding:.4rem;
     }
     .jiku-text .seal-red{
       display:inline-block;
